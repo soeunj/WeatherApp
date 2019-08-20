@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:10-alpine
 
 WORKDIR /weatherapp/backend
 
@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 9000
 
-CMD npm start
+CMD nodemon

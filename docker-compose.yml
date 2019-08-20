@@ -4,23 +4,23 @@ services:
   backend:
     build: ./backend/
     ports:
-      - "9000:9000"
+      - '9000:9000'
     volumes:
       - ./backend/:/weatherapp/backend
-    command: nodemon
+      - /weatherapp/backend/node_modules
     container_name: weatherapp_backend
 
   frontend:
     build: ./frontend/
     ports:
-      - "8000:8000"
+      - '8000:8000'
     volumes:
       - ./frontend/:/weatherapp/frontend
+      - /weatherapp/frontend/node_modules
     depends_on:
       - backend
     links:
       - backend
-    command: npm start
     container_name: weatherapp_frontend
 
   
