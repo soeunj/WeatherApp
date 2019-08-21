@@ -34,3 +34,4 @@ npm i && npm start
 ### TODO:
 - Display forecast in frontend
 - Check the browser location to refer for making a forecast
+- Write ansible playbooks for installing docker and the app itself.
