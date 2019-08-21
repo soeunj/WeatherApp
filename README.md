@@ -11,3 +11,20 @@ DONE:
 TODO:
 1. Display forecast in frontend
 2. Check the browser location to refer for making a forecast
+
+To start up weatherapp:
+```
+docker-compose up
+```
+To build a docker image e.g. backend:
+```
+docker build -t weatherapp_backend .
+```
+To run the docker image e.g. backend:
+```
+docker run --rm -i -p 9000:9000 --name weatherapp_backend -t weatherapp_backend
+```
+If you want to run the app locally, run the following command under backend and frontend directory:
+```
+npm i && npm start
+```
