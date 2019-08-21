@@ -8,7 +8,6 @@ services:
     volumes:
       - ./backend/:/weatherapp/backend
       - /weatherapp/backend/node_modules
-    container_name: weatherapp_backend
 
   frontend:
     build: ./frontend/
@@ -21,6 +20,5 @@ services:
       - backend
     links:
       - backend
-    container_name: weatherapp_frontend
 
   
