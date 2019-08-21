@@ -14,6 +14,8 @@ const getWeatherFromApi = async () => {
   return {};
 };
 
+// TODO: Display forecast //
+
 class Weather extends React.Component {
   constructor(props) {
     super(props);

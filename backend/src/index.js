@@ -1,4 +1,4 @@
-//  const debug = require('debug')('weathermap');
+// const debug = require('debug')('weathermap');
 
 const Koa = require('koa');
 const router = require('koa-router')();
@@ -14,9 +14,16 @@ const port = process.env.PORT || 9000;
 const app = new Koa();
 
 app.use(cors());
-
+// fetch target city's weather
 const fetchWeather = async () => {
   const endpoint = `${mapURI}/weather?q=${targetCity}&appid=${appId}&`;
+  const response = await fetch(endpoint);
+
+  return response ? response.json() : {};
+};
+// fetch target city's forecast
+const fetchForecast = async () => {
+  const endpoint = `${mapURI}/forecast?q=${targetCity}&appid=${appId}&`;
   const response = await fetch(endpoint);
 
   return response ? response.json() : {};
@@ -27,6 +34,13 @@ router.get('/api/weather', async ctx => {
 
   ctx.type = 'application/json; charset=utf-8';
   ctx.body = weatherData.weather ? weatherData.weather[0] : {};
+});
+
+router.get('/api/forecast', async ctx => {
+  const weatherData = await fetchForecast();
+
+  ctx.type = 'application/json; charset=utf-8';
+  ctx.body = weatherData.list ? weatherData.list : {};
 });
 
 app.use(router.routes());
