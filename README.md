@@ -23,7 +23,7 @@ If you want to run the app locally, run the following command under backend and 
 npm i && npm start
 ```
 
-DONE:
+### DONE:
 - Get an API key to make queries in the openweathermap
 - Add Dockerfile's in the frontend and the backend directories
 - Add a docker-compose.yml -file connecting the frontend and the backend, enabling running the app in a connected set of containers
@@ -31,6 +31,6 @@ DONE:
 - Share the development files for the container by using volumes, and make sure the containers are started with a command enabling hot reload.
 - Fix eslint errors.
 
-TODO:
+### TODO:
 - Display forecast in frontend
 - Check the browser location to refer for making a forecast
