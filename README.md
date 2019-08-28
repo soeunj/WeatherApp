@@ -7,6 +7,10 @@ Luckily we now have docker compose saving us from installing the tools on our co
 ## Prerequisites
 - An [openweathermap](http://openweathermap.org) API key.
 - [Docker](https://www.docker.com) and docker compose installed.
+- Create .env file for API key under your project directory (If you want to store .env file in other directory, please edit docker-compose.yml file):
+```
+APPID=<<YOUR API KEY>>
+```
 
 ## Instruction
 
@@ -20,7 +24,7 @@ docker build -t weatherapp_backend .
 ```
 To run the docker image e.g. backend:
 ```
-docker run --rm -i -p 9000:9000 --name weatherapp_backend -t weatherapp_backend
+docker run --env-file <<YOUR .env FILE PATH>> --rm -i -p 9000:9000 --name weatherapp_backend -t weatherapp_backend
 ```
 If you want to run the app locally, run the following command under backend and frontend directory:
 ```
